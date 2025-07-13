@@ -1,0 +1,63 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+
+# Ignore Django migrations (optional — uncomment if you want to ignore them)
+# **/migrations/
+# !**/migrations/__init__.py
+
+# Environment variable file
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+.venv/
+
+# pipenv & poetry
+Pipfile.lock
+poetry.lock
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+
+# MyPy, Pyright, Pylint
+.mypy_cache/
+.pyright/
+pylint-report.txt
+
+# Unit test reports
+junit.xml
+coverage.xml
+
+# Ignore compiled translations
+*.mo
+
+# Ignore temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore local development settings
+local_settings.py
