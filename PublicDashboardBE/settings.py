@@ -38,8 +38,7 @@ SECRET_KEY = 'django-insecure--cke_s)b7qck6^zhqj8mb(wuok8%ji9iw!2+l65^6_42c8vl3-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['public-dboard.moh.gov.et']
 
 # Disable CORS for testing purposes only
 # CORS_ALLOW_ALL_ORIGINS = True  # WARNING: Do not use this in production
