@@ -12,7 +12,7 @@ class FormSubmissionView(APIView):
         serializer = SubmissionSerializer(data=request.data)
         if serializer.is_valid():
             email = serializer.validated_data['email']
-            attachments = request.FILES.getlist('attachments')
+            attachments = [file for key, file in request.FILES.items() if key.startswith('attachments')]
             affiliation = serializer.validated_data.get('affiliation', None)
             requester = serializer.validated_data.get('requester', None)
             position = serializer.validated_data.get('position', None)
