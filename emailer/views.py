@@ -12,7 +12,7 @@ class FormSubmissionView(APIView):
         serializer = SubmissionSerializer(data=request.data)
         if serializer.is_valid():
             email = serializer.validated_data['email']
-            attachments = request.FILES.get('attachment')
+            attachments = request.FILES.getlist('attachment')
             affiliation = serializer.validated_data.get('affiliation', None)
             requester = serializer.validated_data.get('requester', None)
             position = serializer.validated_data.get('position', None)
@@ -125,9 +125,6 @@ class FormSubmissionView(APIView):
             email_message.content_subtype = "html"
 
             if attachments:
-                # If attachments is a single file, wrap it in a list for uniform handling
-                if not isinstance(attachments, list) and not hasattr(attachments, '__iter__'):
-                    attachments = [attachments]
                 for attachment in attachments:
                     email_message.attach(attachment.name, attachment.read(), attachment.content_type)
                     print(f"Attachment {attachment.name} added to email.")
