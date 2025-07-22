@@ -38,25 +38,25 @@ SECRET_KEY = 'django-insecure--cke_s)b7qck6^zhqj8mb(wuok8%ji9iw!2+l65^6_42c8vl3-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['public-dboard.moh.gov.et']
+ALLOWED_HOSTS = ['public-dboard.moh.gov.et','localhost']
 
 # Disable CORS for testing purposes only
-# CORS_ALLOW_ALL_ORIGINS = True  # WARNING: Do not use this in production
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ALLOW_HEADERS = [
-#     'authorization',
-#     'content-type',
-#     'x-csrftoken',
-#     'x-requested-with',
-#     'accept',
-#     'accept-encoding',
-#     'accept-language',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-# ]
+CORS_ALLOW_ALL_ORIGINS = True  # WARNING: Do not use this in production
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'authorization',
+    'content-type',
+    'x-csrftoken',
+    'x-requested-with',
+    'accept',
+    'accept-encoding',
+    'accept-language',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # Application definition
 
@@ -69,7 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'emailer',
     'rest_framework',
-    # 'corsheaders'
+     'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -155,3 +155,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FORCE_SCRIPT_NAME = '/api'
+
